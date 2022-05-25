@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key, required this.title}) : super(key: key);
@@ -44,7 +45,14 @@ class _SplashScreenState extends State<SplashScreen> {
                   Padding(padding: EdgeInsets.only(top:15.0)),
                   Text(widget.title),
                   Padding(padding: EdgeInsets.only(top:5.0)),
-                  Text('Aplikacja do monitorowania \n czystości powietrza'),
+                  Text('Aplikacja do monitorowania \n czystości powietrza',
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.lato(
+                    textStyle: TextStyle(
+                      fontSize: 16.0,
+                      color: Colors.white,
+                    )
+                  )),
                 ],
               )
           ),
