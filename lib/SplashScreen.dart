@@ -39,7 +39,8 @@ class _SplashScreenState extends State<SplashScreen> {
               Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Icon(Icons.wb_cloudy, color: Colors.white),
+                  Image(image: AssetImage('icons/cloud-sun.png'),
+                  ),
                   Padding(padding: EdgeInsets.only(top:15.0)),
                   Text(widget.title),
                   Padding(padding: EdgeInsets.only(top:5.0)),
