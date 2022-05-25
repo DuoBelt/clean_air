@@ -26,8 +26,10 @@ class _SplashScreenState extends State<SplashScreen> {
             
           ),
           Align(
+            alignment: FractionalOffset.center,
             child:
               Column(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Icon(Icons.wb_cloudy, color: Colors.white),
                   Padding(padding: EdgeInsets.only(top:15.0)),
@@ -37,7 +39,12 @@ class _SplashScreenState extends State<SplashScreen> {
                 ],
               )
           ),
-          Positioned(child: Container(
+          Positioned(
+            left: 0,
+              bottom: 35,
+              right: 0,
+              child: Container(
+                alignment: Alignment.center,
             child: Text("Przywiewam dane ..."),
           ))
         ],
