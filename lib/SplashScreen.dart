@@ -43,7 +43,14 @@ class _SplashScreenState extends State<SplashScreen> {
                   Image(image: AssetImage('icons/cloud-sun.png'),
                   ),
                   Padding(padding: EdgeInsets.only(top:15.0)),
-                  Text(widget.title),
+                  Text(widget.title,
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.lato(
+                          textStyle: TextStyle(
+                            fontWeight: FontWeight.bold,
+                        fontSize: 42.0,
+                        color: Colors.white,
+                      ))),
                   Padding(padding: EdgeInsets.only(top:5.0)),
                   Text('Aplikacja do monitorowania \n czystości powietrza',
                   textAlign: TextAlign.center,
