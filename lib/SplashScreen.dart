@@ -32,7 +32,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 colors: [new Color(0xff6671e5), new Color(0xff4852d9)]
               )
             ),
-            
+
           ),
           Align(
             alignment: FractionalOffset.center,
@@ -69,8 +69,15 @@ class _SplashScreenState extends State<SplashScreen> {
               right: 0,
               child: Container(
                 alignment: Alignment.center,
-            child: Text("Przywiewam dane ..."),
-          ))
+                child: Text("Przywiewam dane ...",
+                    textAlign: TextAlign.center,
+                    style: GoogleFonts.lato(
+                        textStyle: TextStyle(
+                          fontWeight: FontWeight.w300,
+                      fontSize: 18.0,
+                      color: Colors.white,
+                    ))),
+              ))
         ],
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
