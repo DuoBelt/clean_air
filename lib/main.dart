@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:clean_air/PermissionScreen.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'MyHomePage.dart';
 import 'SplashScreen.dart';
 
 void main() {
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home:  SplashScreen(),
+      home:  MyHomePage()
     );
   }
 }
