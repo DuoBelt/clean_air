@@ -1,7 +1,9 @@
-import 'package:clean_air/MyHomePage.dart';
-import 'package:clean_air/PermissionScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+
+import 'MyHomePage.dart';
+import 'PermissionScreen.dart';
 import 'main.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -12,6 +14,20 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
+
+    new Future.delayed(
+        const Duration(seconds: 2),
+            ()=>{
+          if(havePermission()){
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => PermissionScreen()))
+          }else{
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => MyHomePage()))
+          }
+
+        });
+
     return Scaffold(
       body: Stack(
         fit: StackFit.expand,

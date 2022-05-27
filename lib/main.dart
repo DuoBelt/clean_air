@@ -1,8 +1,16 @@
+import 'dart:io';
+
 import 'package:clean_air/PermissionScreen.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'SplashScreen.dart';
 
 void main() {
+  FlutterError.onError = (FlutterErrorDetails details) {
+    FlutterError.presentError(details);
+    if (kReleaseMode)
+      exit(1);
+  };
   runApp(MyApp());
 }
 
