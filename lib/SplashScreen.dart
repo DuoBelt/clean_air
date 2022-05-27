@@ -2,7 +2,6 @@ import 'package:clean_air/MyHomePage.dart';
 import 'package:clean_air/PermissionScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-
 import 'main.dart';
 
 class SplashScreen extends StatefulWidget {
