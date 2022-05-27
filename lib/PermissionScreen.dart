@@ -76,7 +76,7 @@ class _PermissionScreenState extends State<PermissionScreen> {
                       style: TextStyle(fontSize: 16.0, color: Colors.black),
                     ),
                     onPressed: () {
-                      //toDO Permission
+                      //todo ask for permission
                       Navigator.push(
                           context,
                           MaterialPageRoute(
