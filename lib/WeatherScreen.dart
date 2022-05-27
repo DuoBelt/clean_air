@@ -47,7 +47,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                       textAlign: TextAlign.center,
                       style: GoogleFonts.lato(
                           textStyle: TextStyle(
-                        fontSize: 16.0,
+                        fontSize: 18.0,
                         color: Colors.white,
                       ))),
                 ],
