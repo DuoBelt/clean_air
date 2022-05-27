@@ -23,7 +23,7 @@ class _AirScreenState extends State<AirScreen> {
                 gradient: LinearGradient(
                     begin: Alignment.centerRight,
                     end: Alignment.centerLeft,
-                    colors: [new Color(0xff6671e5), new Color(0xff4852d9)])),
+                    colors: [new Color(0xff4acf8c), new Color(0xff75EDA6)])),
           ),
           Align(
               alignment: FractionalOffset.center,
@@ -32,6 +32,7 @@ class _AirScreenState extends State<AirScreen> {
                 children: <Widget>[
                   Image(
                     image: AssetImage('icons/cloud-sun.png'),
+                    color: Colors.black,
                   ),
                   Padding(padding: EdgeInsets.only(top: 15.0)),
                   Text(Strings.appTitle,
@@ -40,7 +41,7 @@ class _AirScreenState extends State<AirScreen> {
                           textStyle: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 42.0,
-                        color: Colors.white,
+                        color: Colors.black,
                       ))),
                   Padding(padding: EdgeInsets.only(top: 6.0)),
                   Text('Powietrze \n ',
@@ -48,7 +49,7 @@ class _AirScreenState extends State<AirScreen> {
                       style: GoogleFonts.lato(
                           textStyle: TextStyle(
                         fontSize: 18.0,
-                        color: Colors.white,
+                        color: Colors.black,
                       ))),
                 ],
               )),
@@ -64,7 +65,7 @@ class _AirScreenState extends State<AirScreen> {
                         textStyle: TextStyle(
                       fontWeight: FontWeight.w300,
                       fontSize: 18.0,
-                      color: Colors.white,
+                      color: Colors.black,
                     ))),
               ))
         ],

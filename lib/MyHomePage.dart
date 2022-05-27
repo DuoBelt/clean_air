@@ -23,6 +23,12 @@ final screens = [
         children: screens,
       ),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.white,
+        selectedItemColor: Colors.black,
+        unselectedItemColor: Colors.black45,
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
+        iconSize: 38,
         currentIndex: _currentIndex,
         onTap: (index) => setState(() =>  _currentIndex = index),
         items: [
