@@ -13,6 +13,13 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
+
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: ((context) => PermissionScreen())
+        )
+    );
     return Scaffold(
       body: Stack(
         fit: StackFit.expand,
