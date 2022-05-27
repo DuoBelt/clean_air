@@ -12,13 +12,6 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
-
-    Navigator.push(
-        context,
-        MaterialPageRoute(
-            builder: ((context) => PermissionScreen())
-        )
-    );
     return Scaffold(
       body: Stack(
         fit: StackFit.expand,
@@ -48,7 +41,7 @@ class _SplashScreenState extends State<SplashScreen> {
                         fontSize: 42.0,
                         color: Colors.white,
                       ))),
-                  Padding(padding: EdgeInsets.only(top: 5.0)),
+                  Padding(padding: EdgeInsets.only(top: 6.0)),
                   Text('Aplikacja do monitorowania \n czystości powietrza',
                       textAlign: TextAlign.center,
                       style: GoogleFonts.lato(
@@ -76,6 +69,7 @@ class _SplashScreenState extends State<SplashScreen> {
         ],
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
+
   }
 
   bool havePermission() {
