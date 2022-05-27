@@ -259,3 +259,75 @@ class _SplashScreenState extends State<SplashScreen> {
         E/flutter (20952): #4      TickerFuture.whenCompleteOrCancel.thunk (package:flutter/src/scheduler/ticker.dart:406:5)
         E/flutter (20952): <asynchronous suspension>
         E/flutter (20952):
+
+
+
+**************************************
+
+Launching lib\main.dart on Pixel 3 XL in debug mode...
+Running Gradle task 'assembleDebug'...
+√  Built build\app\outputs\flutter-apk\app-debug.apk.
+Installing build\app\outputs\flutter-apk\app.apk...
+Debug service listening on ws://127.0.0.1:49453/7DavC4NrvBo=/ws
+Syncing files to device Pixel 3 XL...
+I/Gralloc4(21385): mapper 4.x is not supported
+W/Gralloc3(21385): mapper 3.x is not supported
+W/Gralloc4(21385): allocator 4.x is not supported
+W/Gralloc3(21385): allocator 3.x is not supported
+
+======== Exception caught by widgets library =======================================================
+The following assertion was thrown building SplashScreen(dirty, state: _SplashScreenState#ea2b0):
+setState() or markNeedsBuild() called during build.
+
+This Overlay widget cannot be marked as needing to build because the framework is already in the process of building widgets. A widget can be marked as needing to be built during the build phase only if one of its ancestors is currently building. This exception is allowed because the framework builds parent widgets before children, which means a dirty descendant will always be built. Otherwise, the framework might not visit this widget during this build phase.
+The widget on which setState() or markNeedsBuild() was called was: Overlay-[LabeledGlobalKey<OverlayState>#3e3e1]
+  state: OverlayState#7c65e(entries: [OverlayEntry#5f03d(opaque: true; maintainState: false), OverlayEntry#9206e(opaque: false; maintainState: true), OverlayEntry#adc8e(opaque: false; maintainState: false), OverlayEntry#983fa(opaque: false; maintainState: true)])
+The widget which was currently being built when the offending call was made was: SplashScreen
+  dirty
+  state: _SplashScreenState#ea2b0
+The relevant error-causing widget was:
+  SplashScreen SplashScreen:file:///C:/Users/mariu/AndroidStudioProjects/clean_air/lib/main.dart:19:14
+When the exception was thrown, this was the stack:
+#0      Element.markNeedsBuild.<anonymous closure> (package:flutter/src/widgets/framework.dart:4476:11)
+#1      Element.markNeedsBuild (package:flutter/src/widgets/framework.dart:4491:6)
+#2      State.setState (package:flutter/src/widgets/framework.dart:1129:15)
+#3      OverlayState.rearrange (package:flutter/src/widgets/overlay.dart:444:5)
+#4      NavigatorState._flushHistoryUpdates (package:flutter/src/widgets/navigator.dart:3958:16)
+#5      NavigatorState._pushEntry (package:flutter/src/widgets/navigator.dart:4446:5)
+#6      NavigatorState.push (package:flutter/src/widgets/navigator.dart:4374:5)
+#7      Navigator.push (package:flutter/src/widgets/navigator.dart:2016:34)
+#8      _SplashScreenState.build (package:clean_air/SplashScreen.dart:17:15)
+#9      StatefulElement.build (package:flutter/src/widgets/framework.dart:4919:27)
+#10     ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:4806:15)
+#11     StatefulElement.performRebuild (package:flutter/src/widgets/framework.dart:4977:11)
+#12     Element.rebuild (package:flutter/src/widgets/framework.dart:4529:5)
+#13     ComponentElement._firstBuild (package:flutter/src/widgets/framework.dart:4787:5)
+#14     StatefulElement._firstBuild (package:flutter/src/widgets/framework.dart:4968:11)
+#15     ComponentElement.mount (package:flutter/src/widgets/framework.dart:4781:5)
+...     Normal element mounting (275 frames)
+#290    Element.inflateWidget (package:flutter/src/widgets/framework.dart:3817:16)
+#291    MultiChildRenderObjectElement.inflateWidget (package:flutter/src/widgets/framework.dart:6350:36)
+#292    MultiChildRenderObjectElement.mount (package:flutter/src/widgets/framework.dart:6362:32)
+...     Normal element mounting (377 frames)
+#669    Element.inflateWidget (package:flutter/src/widgets/framework.dart:3817:16)
+#670    Element.updateChild (package:flutter/src/widgets/framework.dart:3551:18)
+#671    RenderObjectToWidgetElement._rebuild (package:flutter/src/widgets/binding.dart:1202:16)
+#672    RenderObjectToWidgetElement.mount (package:flutter/src/widgets/binding.dart:1171:5)
+#673    RenderObjectToWidgetAdapter.attachToRenderTree.<anonymous closure> (package:flutter/src/widgets/binding.dart:1119:18)
+#674    BuildOwner.buildScope (package:flutter/src/widgets/framework.dart:2597:19)
+#675    RenderObjectToWidgetAdapter.attachToRenderTree (package:flutter/src/widgets/binding.dart:1118:13)
+#676    WidgetsBinding.attachRootWidget (package:flutter/src/widgets/binding.dart:953:7)
+#677    WidgetsBinding.scheduleAttachRootWidget.<anonymous closure> (package:flutter/src/widgets/binding.dart:933:7)
+(elided 11 frames from class _RawReceivePortImpl, class _Timer, dart:async, and dart:async-patch)
+====================================================================================================
+E/flutter (21385): [ERROR:flutter/lib/ui/ui_dart_state.cc(198)] Unhandled Exception: 'package:flutter/src/widgets/navigator.dart': Failed assertion: line 2845 pos 18: '!navigator._debugLocked': is not true.
+E/flutter (21385): #0      _AssertionError._doThrowNew (dart:core-patch/errors_patch.dart:51:61)
+E/flutter (21385): #1      _AssertionError._throwNew (dart:core-patch/errors_patch.dart:40:5)
+E/flutter (21385): #2      _RouteEntry.handlePush.<anonymous closure> (package:flutter/src/widgets/navigator.dart:2845:18)
+E/flutter (21385): #3      TickerFuture.whenCompleteOrCancel.thunk (package:flutter/src/scheduler/ticker.dart:407:15)
+E/flutter (21385): #4      _rootRunUnary (dart:async/zone.dart:1434:47)
+E/flutter (21385): #5      _CustomZone.runUnary (dart:async/zone.dart:1335:19)
+E/flutter (21385): <asynchronous suspension>
+E/flutter (21385): #6      TickerFuture.whenCompleteOrCancel.thunk (package:flutter/src/scheduler/ticker.dart:406:5)
+E/flutter (21385): <asynchronous suspension>
+E/flutter (21385):
