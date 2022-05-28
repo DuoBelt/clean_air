@@ -1,5 +1,9 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:weather/weather.dart';
 import 'MyHomePage.dart';
 import 'PermissionScreen.dart';
 import 'main.dart';
@@ -12,19 +16,6 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
-
-    new Future.delayed(
-        const Duration(seconds: 2),
-            ()=>{
-          if(havePermission()){
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => PermissionScreen()))
-          }else{
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => MyHomePage()))
-          }
-
-        });
 
     return Scaffold(
       body: Stack(
@@ -86,7 +77,28 @@ class _SplashScreenState extends State<SplashScreen> {
 
   }
 
-  bool havePermission() {
-    return true;
+  @override
+  void initState() {
+    super.initState();
+    if(permissionDenied()){
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => PermissionScreen()));
+    }else{
+      SchedulerBinding.instance.addPostFrameCallback((timeStamp){
+        executeOnceAfterBuild();
+      });
+      }
   }
+
+  bool permissionDenied() {
+    return false;
+  }
+
+
+void executeOnceAfterBuild() async {
+  WeatherFactory wf = new WeatherFactory("xxx", language: Language.POLISH);
+  Weather w = await wf.currentWeatherByCityName("Lublin");
+  log(w.toJson().toString());
+  // Navigator push
+}
 }
