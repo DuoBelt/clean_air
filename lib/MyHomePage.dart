@@ -40,13 +40,13 @@ class _MyHomePageState extends State<MyHomePage> {
         showSelectedLabels: false,
         showUnselectedLabels: false,
         iconSize: 38,
-        currentIndex: _currentIndex,
+        currentIndex: _currentIndex, 
         onTap: (index) => setState(() => _currentIndex = index),
         items: [
           BottomNavigationBarItem(
-              icon: Icon(Icons.masks_outlined), label: "Powietrze"),
+              icon: Image.asset("icons/house.png"), label: "Powietrze", activeIcon: Image.asset("icons/house-checked.png") ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.wb_cloudy_outlined), label: "Pogoda")
+               icon: Image.asset("icons/cloud.png"), label: "Pogoda", activeIcon: Image.asset("icons/cloud-checked.png") ),
         ],
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
