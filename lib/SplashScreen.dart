@@ -113,14 +113,14 @@ class _SplashScreenState extends State<SplashScreen> {
 
     //DEkodowanie JSON-a
     Map<String, dynamic> jsonBody = json.decode(response.body);
-AirQuality aq = new AirQuality(jsonBody);
+    AirQuality aq = new AirQuality(jsonBody);
 
     Navigator.push(context,
-        MaterialPageRoute(builder: (context) => MyHomePage(weather: w)));
+        MaterialPageRoute(builder: (context) => MyHomePage(weather: w, air: aq)));
   }
 }
 
-class AirQuality{
+class AirQuality {
   bool isGood = false;
   bool isBad = false;
   String quality = "";
@@ -130,34 +130,36 @@ class AirQuality{
   int pm10 = 0;
   String station = "";
 
-  AirQuality(Map<String, dynamic> jsonBody){
-     try {
-       aqi = int.tryParse(jsonBody['data']['aqi'].toString())?? -1;
-     } catch (e, s) {
-       print(s);
-     }
-     try {
-       pm25 = int.tryParse(jsonBody['data']['iaqi']['pm25']['v'].toString())?? -1;
-     } catch (e, s) {
-       print(s);
-     }
-      try {
-        pm10 = int.tryParse(jsonBody['data']['iaqi']['pm10']['v'].toString())?? -1;
-     } catch (e, s) {
-       print(s);
-     }
-     station = jsonBody['data']['city']['name'].toString();
-     setupLevel(aqi);
+  AirQuality(Map<String, dynamic> jsonBody) {
+    try {
+      aqi = int.tryParse(jsonBody['data']['aqi'].toString()) ?? -1;
+    } catch (e, s) {
+      print(s);
+    }
+    try {
+      pm25 =
+          int.tryParse(jsonBody['data']['iaqi']['pm25']['v'].toString()) ?? -1;
+    } catch (e, s) {
+      print(s);
+    }
+    try {
+      pm10 =
+          int.tryParse(jsonBody['data']['iaqi']['pm10']['v'].toString()) ?? -1;
+    } catch (e, s) {
+      print(s);
+    }
+    station = jsonBody['data']['city']['name'].toString();
+    setupLevel(aqi);
   }
 
   void setupLevel(int aqi) {
-    if(aqi<= 100){
+    if (aqi <= 100) {
       quality = "Bardzo dobra";
       advice = "Skorzystaj z dobrego powietrza i wyjdź na spacer ";
-    }else if (aqi <= 150){
+    } else if (aqi <= 150) {
       quality = "Nie za dobra";
       advice = "Jeżli tylko moz esz zostań w domu , załatwiaj sprawy online ";
-    }else{
+    } else {
       quality = "Bardzo zła!";
       advice = "Zdecydowanie zostań w domu i załatwiaj sprawy online! ";
     }

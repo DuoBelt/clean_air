@@ -2,9 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'MyHomePage.dart';
 import 'PermissionScreen.dart';
+import 'SplashScreen.dart';
 import 'main.dart';
 
 class AirScreen extends StatefulWidget {
+
+
+  AirScreen({required this.air});
+
+  final AirQuality air;
+
   @override
   State<AirScreen> createState() => _AirScreenState();
 }
