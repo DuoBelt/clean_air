@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'MyHomePage.dart';
+import 'SplashScreen.dart';
 import 'main.dart';
 
 class PermissionScreen extends StatefulWidget {
@@ -72,16 +73,23 @@ class _PermissionScreenState extends State<PermissionScreen> {
                       'Zgoda!',
                       style: TextStyle(fontSize: 16.0, color: Colors.black),
                     ),
-                    onPressed: () {
-                      //todo ask for permission
-        //              Navigator.push(
-        //                  context,
-       //                   MaterialPageRoute(
-        //                      builder: (context) => MyHomePage(weather: widget.weather)));
+                    onPressed: () async {
+                      //todo ask for permissio
+                      LocationPermission permission = await Geolocator.requestPermission();
+                      if(permission == LocationPermission.always ||
+                          permission == LocationPermission.whileInUse) {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => SplashScreen()));
+                      }
                     },
                   )),
             ))
       ]), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
+}
+
+class Lacation {
 }
