@@ -156,9 +156,11 @@ class AirQuality {
     if (aqi <= 100) {
       quality = "Bardzo dobra";
       advice = "Skorzystaj z dobrego powietrza i wyjdź na spacer ";
+      isGood = true;
     } else if (aqi <= 150) {
       quality = "Nie za dobra";
       advice = "Jeżli tylko moz esz zostań w domu , załatwiaj sprawy online ";
+      isBad = true;
     } else {
       quality = "Bardzo zła!";
       advice = "Zdecydowanie zostań w domu i załatwiaj sprawy online! ";
