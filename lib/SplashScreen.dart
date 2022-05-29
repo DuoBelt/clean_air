@@ -16,7 +16,6 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       body: Stack(
         fit: StackFit.expand,
@@ -74,31 +73,31 @@ class _SplashScreenState extends State<SplashScreen> {
         ],
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
-
   }
 
   @override
   void initState() {
     super.initState();
-    if(permissionDenied()){
+    if (permissionDenied()) {
       Navigator.push(
           context, MaterialPageRoute(builder: (context) => PermissionScreen()));
-    }else{
-      SchedulerBinding.instance.addPostFrameCallback((timeStamp){
+    } else {
+      SchedulerBinding.instance.addPostFrameCallback((timeStamp) {
         executeOnceAfterBuild();
       });
-      }
+    }
   }
 
   bool permissionDenied() {
     return false;
   }
 
-
-void executeOnceAfterBuild() async {
-  WeatherFactory wf = new WeatherFactory("xxx", language: Language.POLISH);
-  Weather w = await wf.currentWeatherByCityName("Lublin");
-  log(w.toJson().toString());
-  // Navigator push
-}
+  void executeOnceAfterBuild() async {
+    WeatherFactory wf = new WeatherFactory("",
+        language: Language.POLISH);
+    Weather w = await wf.currentWeatherByCityName("Warszawa");
+    log(w.toJson().toString());
+    Navigator.push(context,
+        MaterialPageRoute(builder: (context) => MyHomePage(weather: w)));
+  }
 }

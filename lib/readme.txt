@@ -1,5 +1,16 @@
 
 
+LinearGradient(
+                  begin: Alignment.bottomLeft,
+                  end: Alignment.topRight,
+                  colors: [
+                    new Color(0xff6E6CD8),
+                    new Color(0xff40A0EF),
+                    new Color(0xff77E1EE),
+                  ])
+
+
+--------------------------------------------------------------------
 
 class _SplashScreenState extends State<SplashScreen> {
   @override
@@ -40,7 +51,10 @@ class _SplashScreenState extends State<SplashScreen> {
 
 
 
-
+  bool isNight(Weather weather) {
+    return false;
+    // DateTime.now().isAfter(weather.sunset) || DateTime.now().isAfter(weather.sunrise);
+  }
 
 
 
